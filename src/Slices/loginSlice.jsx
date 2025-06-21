@@ -27,7 +27,7 @@ async(userCredential,{rejectWithValue}) =>{
 
     try{
        
-        const token=await axios.post('http://r3f-env.eba-62zuape2.us-east-1.elasticbeanstalk.com/identity/token',userCredential);
+        const token=await axios.post('https://r3f-env.eba-62zuape2.us-east-1.elasticbeanstalk.com/identity/token',userCredential);
         localStorage.setItem("token",token.data);
         return token.data;
 
