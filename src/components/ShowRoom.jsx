@@ -20,11 +20,11 @@ import { addOrUpdateMesh } from '../Slices/ModelSlice';
 
 
 const ShowRoom = () => {
-
+  
  const {raycaster} =useThree();
  const dispatch=useDispatch ();
- //const Gltf= useLoader(GLTFLoader, './models/custom.glb')
- const Gltf = useLoader(GLTFLoader, import.meta.env.BASE_URL + 'models/custom.glb');
+ const Gltf= useLoader(GLTFLoader, './models/custom.glb')
+//  const Gltf = useLoader(GLTFLoader, import.meta.env.BASE_URL + 'models/custom.glb');
 
  const cameraControlsRef=useRef(null)
  const modelRef=useRef();
