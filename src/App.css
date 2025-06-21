@@ -165,7 +165,7 @@ body{
 .Name{
   display: flex;
   align-items: center;
-  justify-contnet: center;
+  justify-content: center;
   padding:12px;
   gap:5px;
 }
@@ -218,7 +218,7 @@ body{
 .payment{
   display: flex;
   align-items: center;
-  justify-contetn: center;
+  justify-content: center;
   position:relative;
   left:32%;
   top:40%;

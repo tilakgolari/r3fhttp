@@ -1,8 +1,8 @@
 import React, { useRef,useEffect} from 'react'
 import { Canvas, useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
-import { useLoader } from '@react-three/fiber'
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
+// import { useLoader } from '@react-three/fiber'
+// import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js'
 import { OBJLoader } from 'three/examples/jsm/Addons.js';
 import { useThree } from '@react-three/fiber';
 import { CameraControls, ContactShadows } from '@react-three/drei';
@@ -11,7 +11,8 @@ import { useSelector } from 'react-redux';
 import { Decal } from '@react-three/drei';
 import { useDispatch } from 'react-redux';
 import { MeshStandardMaterial } from 'three';
-
+import { useLoader } from '@react-three/fiber';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 
 
 import { addOrUpdateMesh } from '../Slices/ModelSlice'; 
@@ -22,7 +23,9 @@ const ShowRoom = () => {
 
  const {raycaster} =useThree();
  const dispatch=useDispatch ();
- const Gltf= useLoader(GLTFLoader, './models/custom.glb')
+ //const Gltf= useLoader(GLTFLoader, './models/custom.glb')
+ const Gltf = useLoader(GLTFLoader, import.meta.env.BASE_URL + 'models/custom.glb');
+
  const cameraControlsRef=useRef(null)
  const modelRef=useRef();
  
