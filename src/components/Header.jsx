@@ -8,6 +8,8 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useSelector } from 'react-redux';
 import Django from './django';
+import { Link } from 'react-router-dom';
+
 
 
 
@@ -46,9 +48,12 @@ export default function ButtonAppBar() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            <a href="/" color="inherit">Home</a>
+            {/* <a href="/" color="inherit">Home</a> */}
+            <Link to = "/" style={{ color: 'inherit', textDecoration: 'none' }}> Home </Link>
           </Typography>
-          <a href= "/cart" color="inherit">Cart</a>
+          {/* <a href= "/cart" color="inherit">Cart</a> */}
+
+          <Link to = "/cart" style={{ color: 'inherit', textDecoration: 'none' }}> Cart </Link>
 
           <h4 className="cartLength">{length}</h4>
 
@@ -58,9 +63,12 @@ export default function ButtonAppBar() {
 
          
 
-          {A ? <a href="/login" color="inherit">Hello,{A}</a> : <a href="/login" color="inherit">Login</a>}
+          {/* {A ? <a href="/login" color="inherit">Hello,{A}</a> : <a href="/login" color="inherit">Login</a>} */}
 
-         
+         {A ? <Link to="/login" style={{ color: 'inherit', textDecoration: 'none' }} >Hello,{A}</Link>
+            : <Link to="/login" style={{ color: 'inherit', textDecoration: 'none' }} >Login</Link>}
+
+
         </Toolbar>
       </AppBar>
 
