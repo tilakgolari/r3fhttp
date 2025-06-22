@@ -58,7 +58,7 @@ const Stripe = () => {
 
       if(isLoggedIn)
       {
-        const resp=await axios.post('https://r3f-env.eba-62zuape2.us-east-1.elasticbeanstalk.com/product/checkout', article,customConfig)
+        const resp=await axios.post('http://r3f-env.eba-62zuape2.us-east-1.elasticbeanstalk.com/product/checkout', article,customConfig)
         .then((response) =>{
 
 
