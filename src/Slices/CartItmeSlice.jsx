@@ -29,6 +29,7 @@ const cartItemSlice=createSlice(
 
             clearCart:(state)=>{
                 state.cartItems=[];
+                localStorage.removeItem("cartItems");
 
             }
 

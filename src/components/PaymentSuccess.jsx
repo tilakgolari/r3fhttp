@@ -12,7 +12,7 @@ const PaymentSuccess = () => {
 
 
   useEffect(() =>{
-    dispatch(clearCart);
+    dispatch(clearCart());
   },[])
 
 

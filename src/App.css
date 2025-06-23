@@ -215,16 +215,16 @@ body{
   
 
 }
-.payment{
+.payment {
+  height: 100vh; /* full screen height */
   display: flex;
   align-items: center;
   justify-content: center;
-  position:relative;
-  left:32%;
-  top:40%;
-  gap:2px;
-  color:coral;
+  color: coral;
+  font-size: 1.5rem;
+  text-align: center;
 }
+
 
 .empty{
   position:relative;
