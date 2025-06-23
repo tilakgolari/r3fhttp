@@ -15,7 +15,9 @@ import LandingBanner from './landingBanner'
 
 const Home = () => {
 
-  const [entered,setEntered]=useState(false);
+  const [entered,setEntered]=useState(() =>{
+    return localStorage.getItem('entered') === 'true';
+  });
   const targetPosition = {x: 0, y: 0, z: 3.25};
   const meshRef = useRef();
   
@@ -38,14 +40,17 @@ const Home = () => {
       
   }
 
-
+  const handleEnter = () => {
+    localStorage.setItem('entered', 'true');
+    setEntered(true);
+  };
  
 
   
   return (
     <>
 
-     {!entered &&  <LandingBanner onEnter={() => setEntered(true)}/>}
+     {!entered &&  <LandingBanner onEnter={handleEnter}/>}
      
 
      {entered && (
