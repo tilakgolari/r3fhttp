@@ -10,10 +10,12 @@ import Buttons from './Buttons'
 import { useDispatch } from 'react-redux'
 import { addtoCart } from '../Slices/CartItmeSlice'
 import Stripe from './Stripe'
-
+import { useState } from 'react'
+import LandingBanner from './landingBanner'
 
 const Home = () => {
 
+  const [entered,setEntered]=useState(false);
   const targetPosition = {x: 0, y: 0, z: 3.25};
   const meshRef = useRef();
   
@@ -42,6 +44,13 @@ const Home = () => {
   
   return (
     <>
+
+     {!entered &&  <LandingBanner onEnter={() => setEntered(true)}/>}
+     
+
+     {entered && (
+
+      <>
       <Suspense fallback={<LoadingSpinner/>}>  
       <Canvas camera={{position:[-1.5,0.65,1.65]}}
              gl={{preserveDrawingBuffer:true}}
@@ -87,10 +96,10 @@ const Home = () => {
 
       <Buttons handleClick={downloadScreenshot}/>   
       
-      
-
-      
+     
     </>
+  )} 
+  </>
   )
 }
 
